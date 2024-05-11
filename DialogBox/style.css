@@ -1,0 +1,89 @@
+@keyframes showDialog {
+  0% {
+    transform: translate(-50%, -50%) scale(0.905);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes closeDialog {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.905);
+    opacity: 0;
+  }
+}
+
+* {
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: palegoldenrod;
+}
+
+h1 {
+  font-size: large;
+  color: midnightblue;
+}
+
+p {
+  font-size: 24px;
+  color: midnightblue;
+  width: 500px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: midnightblue;
+  color: antiquewhite;
+  margin-top: 20px;
+  transition: all 0.3 ease;
+}
+
+.blur {
+  z-index: 5; /* switching the ´layer´ position of blur */
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(2px); /* blur effect */
+  /* making the blur full screen */
+  height: 100vh;
+  width: 100vw;
+  /* blur off */
+  display: none;
+}
+
+.dialog-window {
+  /* switching the ´layer´ position of DialogBox (this will make the box above the blur)*/
+  z-index: 10;
+  width: 350px;
+  position: fixed;
+  /* centralizing */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: aqua;
+  padding: 20px;
+
+  display: none;
+  flex-direction: column;
+  text-align: left;
+}
+
+.dialogbox-title {
+  margin-bottom: 20px;
+  font-size: large;
+  font-weight: bold;
+}
