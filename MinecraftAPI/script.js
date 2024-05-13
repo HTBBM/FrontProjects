@@ -56,6 +56,7 @@ fetch(URL)
           newImg.setAttribute('class', 'img-player')
           /* newImg.setAttribute('id', `img-${i}`) */
           newImg.setAttribute('id', `img-${pessoas[i].name}`)
+          newImg.setAttribute('src', `https://mc-heads.net/avatar/${pessoas[i].name}/200/`)
           locate_elem.insertBefore(newImg, locate_elem.children[1])
 
           newDiv = doc.createElement('div')

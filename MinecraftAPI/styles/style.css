@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nova+Square&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: 0 auto;
   padding: 0 auto;
@@ -69,8 +71,9 @@ body .div-h #version {
 body .container {
   margin-top: 50px;
   display: grid;
-  border: 1px solid white;
+  /* border: 1px solid white;
   background-color: #333;
+   */
   grid-template-columns: auto auto auto;
   gap: 30px 60px;
   justify-content: center;
@@ -81,12 +84,13 @@ body .container {
 body .container .player {
   display: grid;
   grid-template-columns: 160px auto;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   height: 150px;
   width: 400px;
   /*       width: 100%; */
   background-color: #ccc;
-  padding: 8px;
+  padding: 10px;
+  border-radius: 10px;
   gap: 10px;
   overflow: hidden;
 }
@@ -94,10 +98,12 @@ body .container .img-player {
   background-color: #262626;
   height: 100%;
   width: 100%;
+  border-radius: 10px;
 }
 body .container .info-player {
   margin-top: 2%;
-  background-color: rgb(121, 121, 121);
+  background-color: rgba(121, 121, 121, 0.7);
+  border-radius: 10px;
   height: 96%;
   width: 100%;
   word-break: break-all;
@@ -105,12 +111,18 @@ body .container .info-player {
 }
 body .container .info-player .nome-p {
   margin-left: 15px;
-  margin-top: 15px;
+  margin-top: 12px;
   margin-right: 10px;
   font-size: 24px;
   margin-bottom: 10px;
+  font-family: "Ubuntu Sans Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 body .container .info-player .uuid-p {
-  margin-left: 30px;
-  margin-right: 10px;
+  margin-left: 24px;
+  margin-right: 15px;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }/*# sourceMappingURL=style.css.map */
