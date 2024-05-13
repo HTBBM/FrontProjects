@@ -1,15 +1,8 @@
 .container {
   display: grid;
-  /* adicionando o gap */
-  gap: 5px;
-  /* divindo as colunas */
+
+  /* definindo as colunas */
   grid-template-columns: auto auto auto;
-  /* aumentando o tamanho do container */
-  height: 50vh;
-  /* horizontal */
-  justify-content: center;
-  /* vertical */
-  align-items: center;
 
   /* debug */
   background-color: #333;
@@ -21,4 +14,32 @@
   background-color: #ccc;
   padding: 20px;
   border: 1px solid blue;
+}
+
+#item-1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+#item-2 {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+#item-3 {
+  justify-self: end;
+  height: 200px;
+}
+
+#item-5 {
+  justify-self: start;
+  height: 200px;
+}
+
+#item-4 {
+  align-self: center;
+}
+
+#item-6 {
+  align-self: flex-end;
 }

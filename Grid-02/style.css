@@ -1,0 +1,24 @@
+.container {
+  display: grid;
+  /* adicionando o gap */
+  gap: 5px;
+  /* divindo as colunas */
+  grid-template-columns: auto auto auto;
+  /* aumentando o tamanho do container */
+  height: 50vh;
+  /* horizontal */
+  justify-content: center;
+  /* vertical */
+  align-items: center;
+
+  /* debug */
+  background-color: #333;
+  border: 3px solid red;
+  padding: 15px;
+}
+.container div {
+  /* debug */
+  background-color: #ccc;
+  padding: 20px;
+  border: 1px solid blue;
+}
