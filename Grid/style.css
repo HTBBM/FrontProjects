@@ -1,0 +1,39 @@
+.container {
+  display: grid;
+  /* adicionando o gap */
+  gap: 5px;
+  /* criando areas */
+  grid-template-areas:
+    "header header header header"
+    "sidebar content content content"
+    "footer footer footer footer";
+
+  /* debug */
+  background-color: #333;
+  border: 3px solid red;
+  padding: 15px;
+}
+.container div {
+  /* debug */
+  background-color: #ccc;
+  padding: 20px;
+  border: 1px solid blue;
+}
+
+#header {
+  /* setando o header (para a area) */
+  grid-area: header;
+}
+#sidebar {
+  /* setando o sidebar (para a area) */
+  grid-area: sidebar;
+  height: 50vh;
+}
+#content {
+  /* setando o content (para a area) */
+  grid-area: content;
+}
+#footer {
+  /* setando o footer (para a area) */
+  grid-area: footer;
+}
