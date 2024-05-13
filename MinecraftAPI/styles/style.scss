@@ -80,4 +80,53 @@ body {
       font-style: normal;
     }
   }
+
+  .container {
+    margin-top: 50px;
+    display: grid;
+    border: 1px solid white;
+    background-color: #333;
+    grid-template-columns: auto auto auto;
+    gap: 30px 60px;
+    justify-content: center;
+    padding: 20px;
+    /* height: 400px; */
+    color: white;
+    .player {
+      display: grid;
+      grid-template-columns: 160px auto;
+      border: 2px solid red;
+      height: 150px;
+      width: 400px;
+      /*       width: 100%; */
+      background-color: #ccc;
+      padding: 8px;
+      gap: 10px;
+      overflow: hidden;
+    }
+    .img-player {
+      background-color: #262626;
+      height: 100%;
+      width: 100%;
+    }
+    .info-player {
+      margin-top: 2%;
+      background-color: rgb(121, 121, 121);
+      height: 96%;
+      width: 100%;
+      word-break: break-all;
+      overflow: hidden;
+      .nome-p {
+        margin-left: 15px;
+        margin-top: 15px;
+        margin-right: 10px;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .uuid-p {
+        margin-left: 30px;
+        margin-right: 10px;
+      }
+    }
+  }
 }
