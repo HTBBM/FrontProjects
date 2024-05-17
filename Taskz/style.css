@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: aqua;
+  background-color: #ccc;
 }
 body .container {
   height: 100vh;
@@ -156,26 +156,42 @@ body .container .content .viewer .header .menu-info dialog #dialog-create #dialo
   color: #ccc;
   border: none;
 }
-body .container .content .viewer .header .menu-info dialog #dialog-create #dialog-c-inpcolor {
-  padding: 0;
-  border: 1px solid black;
-  background: transparent;
-  /* border-radius: 50%; */
-  width: 30px;
-  height: 30px;
+body .container .content .viewer .header .menu-info dialog #dialog-create #color-span {
+  margin-top: 10px;
+  gap: 10px;
+}
+body .container .content .viewer .header .menu-info dialog #dialog-create .color-input {
+  border: 2px solid #ccc;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
 }
-body .container .content .viewer .header .menu-info dialog #dialog-div-btn {
+body .container .content .viewer .header .menu-info dialog #dialog-create .color-input:active {
+  background-color: aliceblue;
+}
+body .container .content .viewer .header .menu-info dialog #color-1 {
+  background-color: red;
+}
+body .container .content .viewer .header .menu-info dialog #color-2 {
+  background-color: green;
+}
+body .container .content .viewer .header .menu-info dialog #color-3 {
+  background-color: cornflowerblue;
+}
+body .container .content .viewer .header .menu-info dialog #color-4 {
+  background-color: yellow;
+}
+body .container .content .viewer .header .menu-info #dialog-div-btn {
   display: grid;
   justify-content: right;
   width: 100%;
 }
-body .container .content .viewer .header .menu-info dialog #dialog-div-btn #dialog-button {
+body .container .content .viewer .header .menu-info #dialog-div-btn #dialog-button {
   margin-top: 10px;
   background-color: black;
   color: #ccc;
 }
-body .container .content .viewer .header .menu-info #menu-title {
+body .container .content .viewer .header #menu-title {
   margin-top: 15px;
   margin-left: 15px;
   font-size: 45px;
@@ -185,7 +201,7 @@ body .container .content .viewer .header .menu-info #menu-title {
   -webkit-text-decoration: solid underline cadetblue 4px;
           text-decoration: solid underline cadetblue 4px;
 }
-body .container .content .viewer .header .menu-info #menu-desc {
+body .container .content .viewer .header #menu-desc {
   margin-top: 30px;
   margin-left: 45px;
   margin-right: 30px;
@@ -194,12 +210,12 @@ body .container .content .viewer .header .menu-info #menu-desc {
   font-style: normal;
   color: rgb(80, 80, 80);
 }
-body .container .content .viewer .header .btns {
+body .container .content .viewer .btns {
   border: solid 1px rgba(255, 0, 0, 0);
   width: 100%;
   height: 100%;
 }
-body .container .content .viewer .info {
+body .container .content .info {
   grid-area: info;
   width: 100%;
   height: 70%;
@@ -209,7 +225,7 @@ body .container .content .viewer .info {
   grid-template-columns: auto;
   align-items: center;
 }
-body .container .content .viewer .info .tarefa-btns {
+body .container .content .info .tarefa-btns {
   display: grid;
   justify-content: center;
   align-items: center;
@@ -217,7 +233,7 @@ body .container .content .viewer .info .tarefa-btns {
   height: 60%;
   border: 2px solid rgba(255, 0, 0, 0);
 }
-body .container .content .viewer .info #btn-task {
+body .container .content .info #btn-task {
   width: 100%;
   height: 40%;
   padding: 2px 5px;
@@ -228,11 +244,11 @@ body .container .content .viewer .info #btn-task {
   border-radius: 10px;
   transition: 0.2s ease-out;
 }
-body .container .content .viewer .info #btn-task:hover {
+body .container .content .info #btn-task:hover {
   color: white;
   background-color: rgb(84, 125, 235);
 }
-body .container .content .viewer .grid {
+body .container .content .grid {
   grid-area: grid;
   width: 100%;
   height: 80%;
