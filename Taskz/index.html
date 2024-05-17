@@ -20,24 +20,57 @@
         </div>
       </div>
       <div class="content">
-        <div class="viewer">
-          <div class="title">
-            <h1>Title</h1>
+        <div class="viewer" id="viewer">
+          <div class="header">
+            <div class="menu-info">
+              <h1 id="menu-title">Title</h1>
+              <p id="menu-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+                suscipit itaque commodi modi amet nam a, laborum libero ea
+                facilis atque error nobis autem nemo quos molestiae repellat
+                corporis odio.
+              </p>
+              <span id="clear">
+                <!--    <dialog open="">
+                  <div id="dialog-div">
+                    <h1 id="dialog-title">Title</h1>
+                  </div>
+                  <br />
+                  <h3 id="dialog-c-name">Name:</h3>
+                  <input id="dialog-c-input"/>
+                  <h3 id="dialog-c-color">Color:</h3>
+                  <input type="color" />
+                  <h3 id="dialog-c-desc">Description:</h3>
+                  <textarea
+                    id="dialog-c-textarea"
+                    style="resize: both"
+                  ></textarea>
+                  <br />
+                  <button id="dialog-button"></button>
+                </dialog> -->
+                <span id="after"></span>
+              </span>
+            </div>
+            <div class="btns"></div>
+          </div>
+          <div class="info">
+            <div class="tarefa-btns">
+              <input
+                type="button"
+                id="btn-task"
+                value="Adicionar Tarefa"
+                onclick="createTask()"
+              />
+
+              <input type="button" id="btn-task" value="Remover Tarefa" />
+            </div>
           </div>
 
-          <div class="desc">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut
-              quaerat fuga similique cupiditate ipsa sequi cumque ea dolor
-              consequatur ex, earum eum veniam optio maxime vitae quae.
-              Doloribus, consequatur molestiae?
-            </p>
-          </div>
-          <div class="info"></div>
-          <div class="grid"></div>
+          <iframe class="grid" src="./tasks/tasks.html"> </iframe>
         </div>
       </div>
     </div>
+
     <script src="./script.js"></script>
   </body>
 </html>
