@@ -183,22 +183,23 @@ body {
                   width: 40px;
                   height: 40px;
                   cursor: pointer;
+                  transition: 0.3s ease-out;
                 }
                 .color-input:active {
                   background-color: aliceblue;
                 }
               }
               #color-1 {
-                background-color: red;
+                background-color: #c73a3a;
               }
               #color-2 {
-                background-color: green;
+                background-color: #6ec73a;
               }
               #color-3 {
-                background-color: cornflowerblue;
+                background-color: #3a81c7;
               }
               #color-4 {
-                background-color: yellow;
+                background-color: #c79d3a;
               }
             }
             #dialog-div-btn {

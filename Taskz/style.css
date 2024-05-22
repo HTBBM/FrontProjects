@@ -95,7 +95,15 @@ body .container .content .viewer .header .menu-info dialog #dialog-span {
   justify-content: right;
   margin: 0;
 }
-body .container .content .viewer .header .menu-info dialog #dialog-span #close-btn {
+body
+  .container
+  .content
+  .viewer
+  .header
+  .menu-info
+  dialog
+  #dialog-span
+  #close-btn {
   display: grid;
   text-align: center;
   font-size: 10px;
@@ -111,7 +119,15 @@ body .container .content .viewer .header .menu-info dialog #dialog-span #close-b
   margin-right: -5px;
   margin-top: -5px;
 }
-body .container .content .viewer .header .menu-info dialog #dialog-span #close-btn:hover {
+body
+  .container
+  .content
+  .viewer
+  .header
+  .menu-info
+  dialog
+  #dialog-span
+  #close-btn:hover {
   background-color: rgb(184, 65, 65);
   transition: 0.3s ease-out;
   cursor: pointer;
@@ -122,7 +138,15 @@ body .container .content .viewer .header .menu-info dialog #dialog-div {
   margin-top: -20px;
   justify-content: center;
 }
-body .container .content .viewer .header .menu-info dialog #dialog-div #dialog-title {
+body
+  .container
+  .content
+  .viewer
+  .header
+  .menu-info
+  dialog
+  #dialog-div
+  #dialog-title {
   margin: 0;
   margin-left: -5px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -139,7 +163,15 @@ body .container .content .viewer .header .menu-info dialog #dialog-create {
   gap: 50px;
   outline: 0px;
 }
-body .container .content .viewer .header .menu-info dialog #dialog-create #dialog-c-textarea {
+body
+  .container
+  .content
+  .viewer
+  .header
+  .menu-info
+  dialog
+  #dialog-create
+  #dialog-c-textarea {
   margin-top: 10px;
   background-color: black;
   border: none;
@@ -147,7 +179,15 @@ body .container .content .viewer .header .menu-info dialog #dialog-create #dialo
   padding: 10px;
   border-radius: 10px;
 }
-body .container .content .viewer .header .menu-info dialog #dialog-create #dialog-c-input {
+body
+  .container
+  .content
+  .viewer
+  .header
+  .menu-info
+  dialog
+  #dialog-create
+  #dialog-c-input {
   border-radius: 5px;
   padding: 5px;
   width: 70%;
@@ -156,37 +196,69 @@ body .container .content .viewer .header .menu-info dialog #dialog-create #dialo
   color: #ccc;
   border: none;
 }
-body .container .content .viewer .header .menu-info dialog #dialog-create #color-span {
+body
+  .container
+  .content
+  .viewer
+  .header
+  .menu-info
+  dialog
+  #dialog-create
+  #color-span {
   margin-top: 10px;
   gap: 10px;
 }
-body .container .content .viewer .header .menu-info dialog #dialog-create .color-input {
+body
+  .container
+  .content
+  .viewer
+  .header
+  .menu-info
+  dialog
+  #dialog-create
+  .color-input {
   border: 2px solid #ccc;
   width: 40px;
   height: 40px;
   cursor: pointer;
+  transition: 0.3s ease-out;
 }
-body .container .content .viewer .header .menu-info dialog #dialog-create .color-input:active {
+body
+  .container
+  .content
+  .viewer
+  .header
+  .menu-info
+  dialog
+  #dialog-create
+  .color-input:active {
   background-color: aliceblue;
 }
 body .container .content .viewer .header .menu-info dialog #color-1 {
-  background-color: red;
+  background-color: #c73a3a;
 }
 body .container .content .viewer .header .menu-info dialog #color-2 {
-  background-color: green;
+  background-color: #6ec73a;
 }
 body .container .content .viewer .header .menu-info dialog #color-3 {
-  background-color: cornflowerblue;
+  background-color: #3a81c7;
 }
 body .container .content .viewer .header .menu-info dialog #color-4 {
-  background-color: yellow;
+  background-color: #c79d3a;
 }
 body .container .content .viewer .header .menu-info #dialog-div-btn {
   display: grid;
   justify-content: right;
   width: 100%;
 }
-body .container .content .viewer .header .menu-info #dialog-div-btn #dialog-button {
+body
+  .container
+  .content
+  .viewer
+  .header
+  .menu-info
+  #dialog-div-btn
+  #dialog-button {
   margin-top: 10px;
   background-color: black;
   color: #ccc;
@@ -199,7 +271,7 @@ body .container .content .viewer .header #menu-title {
   font-weight: 700;
   font-style: normal;
   -webkit-text-decoration: solid underline cadetblue 4px;
-          text-decoration: solid underline cadetblue 4px;
+  text-decoration: solid underline cadetblue 4px;
 }
 body .container .content .viewer .header #menu-desc {
   margin-top: 30px;
@@ -256,4 +328,4 @@ body .container .content .grid {
   border-radius: 10px;
   /* border: 2px solid $border; */
   /* background-color: green; */
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */

@@ -14,7 +14,9 @@ let newTextArea;
 let newBtn;
 let newSpan;
 let newDivDiv;
-
+let color;
+let colors = [1, 2, 3, 4];
+let colorIndex;
 function createTask() {
   newText = doc.createTextNode("");
   newDiv = doc.createElement("div");
@@ -68,7 +70,8 @@ function createTask() {
   //Color H3
 
   newH3 = doc.createElement("h3");
-  newText = doc.createTextNode("Color:");
+  //newText = doc.createTextNode("Color:");
+  newText = doc.createTextNode("");
   newH3.appendChild(newText);
   newH3.setAttribute("id", "dialog-c-color");
   newDivDiv.insertBefore(newH3, newDivDiv[0]);
@@ -92,6 +95,7 @@ function createTask() {
   newDivDiv.insertBefore(newSpan, newDivDiv[0]);
 
   newBtn.setAttribute("id", "color-1");
+  newBtn.setAttribute("onclick", "changeColor(1)");
   newBtn.setAttribute("class", "color-input");
   newBtn.setAttribute("name", "color");
   newBtn.setAttribute("style", "box-sizing:border-box");
@@ -99,16 +103,19 @@ function createTask() {
   newDivDiv.insertBefore(newSpan, newDivDiv[0]);
   newBtn = doc.createElement("button");
   newBtn.setAttribute("id", "color-2");
+  newBtn.setAttribute("onclick", "changeColor(2)");
   newBtn.setAttribute("class", "color-input");
   newBtn.setAttribute("name", "color");
   newSpan.insertBefore(newBtn, newSpan[0]);
   newBtn = doc.createElement("button");
   newBtn.setAttribute("id", "color-3");
+  newBtn.setAttribute("onclick", "changeColor(3)");
   newBtn.setAttribute("class", "color-input");
   newBtn.setAttribute("name", "color");
   newSpan.insertBefore(newBtn, newSpan[0]);
   newBtn = doc.createElement("button");
   newBtn.setAttribute("id", "color-4");
+  newBtn.setAttribute("onclick", "changeColor(4)");
   newBtn.setAttribute("class", "color-input");
   newBtn.setAttribute("name", "color");
   newSpan.insertBefore(newBtn, newSpan[0]);
@@ -176,3 +183,82 @@ function createTask() {
 function closeTask() {
   clear.innerHTML = "";
 }
+
+function changeColor(number) {
+
+  for (const cor of colors) {
+    doc.getElementById(`color-${cor}`).style.opacity = 1;
+  }
+
+  let colorButton = doc.getElementById(`color-${number}`)
+  colorIndex = colors.indexOf(number);
+  colors.splice(colorIndex, 1)
+
+  if (number == 1) {
+    color = 'red';
+  }
+  else if (number == 2) {
+    color = 'green'
+  }
+  else if (number == 3) {
+    color = 'blue'
+  }
+  else if (number == 4) {
+    color = 'yellow'
+  }
+  for (const cor of colors) {
+    doc.getElementById(`color-${cor}`).style.opacity = 0.3;
+  }
+
+  colors.push(number)
+}
+
+/* ----------------------------------- COOKIES ----------------------------------- */
+
+let cookieID = 1;
+
+function setCookie(name, desc, color) {
+  let cookieValue = `${cookieID}|${name}|${desc}|${color}`
+  doc.cookie = `randomCookie=` + encodeURIComponent(cookieValue) + "; path=/"
+  cookieID++;
+}
+
+//setCookie("Codar", "Importante", 1);
+
+function getCookie() {
+  let name = "randomCookie";
+  let decodedCookie = decodeURIComponent(document.cookie)
+  let ca = decodedCookie.split(';')
+
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    console.log(`trim: ${c}`)
+
+    if (c.indexOf(name) == 0) {
+
+      let cookieValue = c.substring(name.length, c.length)
+      let parts = cookieValue.split('|')
+
+      if (parts.length === 4) {
+
+        return {
+          id: parts[0],
+          name: parts[1],
+          desc: parts[2],
+          color: Number(parts[3])
+        }
+      }
+    }
+    return console.log("erro no cookie")
+  }
+
+  console.log(ca)
+}
+
+let CookieData = getCookie();
+//console.log("Name: ", CookieData.name)
+
+function eraseComplexCookie() {
+  document.cookie = "randomCookie=; Max-Age=-99999999; path=/";
+}
+
