@@ -81,7 +81,9 @@ body {
           "info grid grid grid grid"
           "info grid grid grid grid"
           "info grid grid grid grid";
-
+        iframe {
+          border: none;
+        }
         .header {
           grid-area: header;
           width: 100%;

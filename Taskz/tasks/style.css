@@ -1,0 +1,35 @@
+body {
+  background-color: #8c8b8b;
+  padding: 10px;
+}
+
+.task-item {
+  width: 300px;
+  height: 100px;
+  display: grid;
+  background-color: #ccc;
+  border-radius: 10px;
+}
+.task-item .task-title {
+  border: 1px solid red;
+}
+.task-item .task-info {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  border: 1px solid red;
+}
+.task-item .task-info .task-color {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid blue;
+}
+.task-item .task-info .task-color .span-color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.task-item .task-info .task-desc {
+  border: 1px solid yellow;
+}/*# sourceMappingURL=style.css.map */

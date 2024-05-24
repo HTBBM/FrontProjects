@@ -17,6 +17,11 @@ let newDivDiv;
 let color;
 let colors = [1, 2, 3, 4];
 let colorIndex;
+
+
+let taskArray = []
+
+
 function createTask() {
   newText = doc.createTextNode("");
   newDiv = doc.createElement("div");
@@ -98,6 +103,7 @@ function createTask() {
   newBtn.setAttribute("onclick", "changeColor(1)");
   newBtn.setAttribute("class", "color-input");
   newBtn.setAttribute("name", "color");
+  newBtn.setAttribute("type", "button");
   newBtn.setAttribute("style", "box-sizing:border-box");
   newSpan.insertBefore(newBtn, newSpan[0]);
   newDivDiv.insertBefore(newSpan, newDivDiv[0]);
@@ -106,23 +112,23 @@ function createTask() {
   newBtn.setAttribute("onclick", "changeColor(2)");
   newBtn.setAttribute("class", "color-input");
   newBtn.setAttribute("name", "color");
+  newBtn.setAttribute("type", "button");
   newSpan.insertBefore(newBtn, newSpan[0]);
   newBtn = doc.createElement("button");
   newBtn.setAttribute("id", "color-3");
   newBtn.setAttribute("onclick", "changeColor(3)");
   newBtn.setAttribute("class", "color-input");
   newBtn.setAttribute("name", "color");
+  newBtn.setAttribute("type", "button");
   newSpan.insertBefore(newBtn, newSpan[0]);
   newBtn = doc.createElement("button");
   newBtn.setAttribute("id", "color-4");
   newBtn.setAttribute("onclick", "changeColor(4)");
   newBtn.setAttribute("class", "color-input");
   newBtn.setAttribute("name", "color");
+  newBtn.setAttribute("type", "button");
   newSpan.insertBefore(newBtn, newSpan[0]);
 
-  {
-    /* <input type="radio" checked="checked" name="radio"> */
-  }
 
   //NewDivDiv
 
@@ -177,8 +183,54 @@ function createTask() {
   newText = doc.createTextNode("Criar Tarefa");
   newBtn.appendChild(newText);
   newBtn.setAttribute("id", "dialog-button");
+  newBtn.setAttribute("type", "button");
+  newBtn.setAttribute("onclick", " addTask()");
   newDiv.insertBefore(newBtn, newDiv[0]);
 }
+
+function addTask() {
+
+
+
+  let username = doc.getElementById('dialog-c-input').value
+  let desc = doc.getElementById('dialog-c-textarea').value
+
+  closeTask();
+
+  ExportInfos(username, desc, color);
+
+  return souza()
+
+}
+
+
+
+function ExportInfos(user, desc, colr) {
+
+  if (user == "" || desc == "" || colr == "") {
+    return console.log("Passa os baguio fi!")
+  }
+  else {
+
+    usrObject = {
+
+      name: user,
+      desc: desc,
+      color: color
+
+    }
+
+    //console.log("User: ", usrObject)
+
+    return taskArray.push(usrObject)
+
+  }
+
+
+
+
+}
+
 
 function closeTask() {
   clear.innerHTML = "";
@@ -190,21 +242,21 @@ function changeColor(number) {
     doc.getElementById(`color-${cor}`).style.opacity = 1;
   }
 
-  let colorButton = doc.getElementById(`color-${number}`)
+  //let colorButton = doc.getElementById(`color-${number}`)
   colorIndex = colors.indexOf(number);
   colors.splice(colorIndex, 1)
 
   if (number == 1) {
-    color = 'red';
+    color = '#c73a3a';
   }
   else if (number == 2) {
-    color = 'green'
+    color = '#6ec73a'
   }
   else if (number == 3) {
-    color = 'blue'
+    color = '#3a81c7'
   }
   else if (number == 4) {
-    color = 'yellow'
+    color = '#c79d3a'
   }
   for (const cor of colors) {
     doc.getElementById(`color-${cor}`).style.opacity = 0.3;
@@ -214,12 +266,12 @@ function changeColor(number) {
 }
 
 /* ----------------------------------- COOKIES ----------------------------------- */
-
+/* 
 let cookieID = 1;
 
 function setCookie(name, desc, color) {
-  let cookieValue = `${cookieID}|${name}|${desc}|${color}`
-  doc.cookie = `randomCookie=` + encodeURIComponent(cookieValue) + "; path=/"
+  let cookieValue = `${name}|${desc}|${color}`
+  doc.cookie = "Task=" + cookieValue + `; path=/${cookieID}`
   cookieID++;
 }
 
@@ -255,10 +307,84 @@ function getCookie() {
   console.log(ca)
 }
 
-let CookieData = getCookie();
+//let CookieData = getCookie();
 //console.log("Name: ", CookieData.name)
 
 function eraseComplexCookie() {
   document.cookie = "randomCookie=; Max-Age=-99999999; path=/";
 }
 
+ */
+
+//TaskObject
+
+
+
+
+//let Flocate = getElementById('Daniel')
+
+
+function souza() {
+  for (const task of taskArray) {
+    console.log(task);
+
+    const iframe = doc.querySelector("#iframe")
+    let Flocate = iframe.contentDocument.querySelector("#Daniel")
+
+    if (Flocate) {
+
+      let TextTitle = doc.createElement('h2')
+      let DescTitle = doc.createElement('h3')
+      let SpanColor = doc.createElement('span')
+      let taskItem = doc.createElement('div')
+      let taskTitle = doc.createElement('div')
+      let taskInfo = doc.createElement('div')
+      let taskColor = doc.createElement('div')
+      let taskDesc = doc.createElement('div')
+
+
+      taskItem.setAttribute('class', 'task-item')
+      Flocate.insertBefore(taskItem, Flocate[0])
+
+
+      taskTitle.setAttribute('class', 'task-title')
+      taskItem.insertBefore(taskTitle, taskItem[0])
+
+      TextTitle.appendChild(doc.createTextNode(`${task.name}`))
+      taskTitle.insertBefore(TextTitle, taskTitle[0])
+
+
+      taskInfo.setAttribute('class', 'task-info')
+      taskItem.insertBefore(taskInfo, taskItem[0])
+
+
+      taskColor.setAttribute('class', 'task-color')
+      taskInfo.insertBefore(taskColor, taskInfo[0])
+
+
+      SpanColor.style.backgroundColor = `#${task.color}`
+      SpanColor.setAttribute('class', 'span-color')
+      taskColor.insertBefore(SpanColor, taskColor[0])
+
+
+      taskDesc.setAttribute('class', 'task-desc')
+      taskInfo.insertBefore(taskDesc, taskInfo[0])
+
+
+
+
+      console.log(task)
+
+    }
+    else {
+      console.log("Element not found")
+    }
+    console.log('iframe')
+
+    let a = taskArray.indexOf(task)
+    taskArray.splice(a, 1)
+
+
+  }
+
+}

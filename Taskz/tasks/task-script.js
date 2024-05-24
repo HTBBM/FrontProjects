@@ -1,18 +1,17 @@
-/* ----------------------------------- COOKIES ----------------------------------- */
-
-let cookieID = 1;
-
-function setCookie(name, desc, color) {
-  let cookieValue = `${cookieID}|${name}|${desc}|${color}`
-  doc.cookie = `randomCookie=` + encodeURIComponent(cookieValue) + "; path=/"
-  cookieID++;
-}
-
-//setCookie("Codar", "Importante", 1);
-
+/*
 function getCookie() {
-  let name = "randomCookie";
-  let decodedCookie = decodeURIComponent(document.cookie)
+
+  const todosCookies = document.cookie;
+  
+    if (todosCookies === "") {
+      console.log("Não há cookies disponíveis.");
+      return;
+    } 
+
+
+
+  let name = "Task";
+  let decodedCookie = document.cookie
   let ca = decodedCookie.split(';')
 
   for (let i = 0; i < ca.length; i++) {
@@ -24,13 +23,13 @@ function getCookie() {
       let cookieValue = c.substring(name.length, c.length)
       let parts = cookieValue.split('|')
 
-      if (parts.length === 4) {
+      if (parts.length === 3) {
 
         return {
-          id: parts[0],
-          name: parts[1],
-          desc: parts[2],
-          color: Number(parts[3])
+
+          name: parts[0],
+          desc: parts[1],
+          color: Number(parts[2])
         }
       }
     }
@@ -40,10 +39,43 @@ function getCookie() {
   console.log(ca)
 }
 
-let CookieData = getCookie();
+getCookie();
+function listarCookies() {
+  // Obtém todos os cookies como uma única string
+  //  const todosCookies = document.cookie;
+
+  // Verifica se há cookies
+   if (todosCookies === "") {
+    console.log("Não há cookies disponíveis.");
+    return;
+  }
+ 
+  // Divide a string de cookies em um array de cookies
+
+  // Cria um objeto para armazenar os cookies
+
+  // Itera sobre cada cookie e armazena-o no objeto
+  arrayDeCookies.forEach(cookie => {
+    // Divide cada cookie em nome e valor
+    const [nome, valor] = cookie.split("=");
+    cookies[nome] = valor;
+  });
+
+  // Lista os cookies no console
+  console.log("Cookies:");
+  for (const [nome, valor] of Object.entries(cookies)) {
+    console.log(`${nome}: ${valor}`);
+  }
+}
+
+//listarCookies();
+
+//let CookieData = getCookie();
 //console.log("Name: ", CookieData.name)
 
 function eraseComplexCookie() {
   document.cookie = "randomCookie=; Max-Age=-99999999; path=/";
 }
+ */
+
 
